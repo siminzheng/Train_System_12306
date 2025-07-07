@@ -1,0 +1,14 @@
+
+### 测试 business 模块
+GET http://localhost:8003/batch/hello
+Accept: application/json
+
+
+### 测试gateway模块
+GET http://localhost:8000/batch/hello
+Accept: application/json
+
+
+
+###
+

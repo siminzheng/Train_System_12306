@@ -1,0 +1,69 @@
+
+### 测试 member 模块
+GET http://localhost:8001/member/hello
+Accept: application/json
+
+
+### 测试gateway模块
+GET http://localhost:8000/member/hello
+Accept: application/json
+
+
+### 测试连接数据库
+
+GET http://localhost:8000/member/member/count
+Accept: application/json
+token: 12321
+
+### 测试向数据库中添加数据
+
+POST http://localhost:8000/member/member/register
+Content-Type: application/x-www-form-urlencoded
+
+mobile=1897
+
+### 测试生成验证码
+
+POST http://localhost:8000/member/member/send-code
+Content-Type: application/x-www-form-urlencoded
+
+mobile=13000000000
+
+### 测试生成验证码2
+
+POST http://localhost:8000/member/member/send-code
+Content-Type: application/json
+
+{
+  "mobile": "13000000000"
+}
+
+
+### 测试带验证码登录接口
+
+POST http://localhost:8000/member/member/login
+Content-Type: application/x-www-form-urlencoded
+
+
+  mobile= 15785289635 & code=8888
+
+
+
+### 测试带验证码登录接口2
+
+POST http://localhost:8000/member/member/login
+Content-Type: application/json
+
+{
+  "mobile": "13000000000",
+  "code": "8888"
+}
+
+> {%
+    client.log(JSON.stringify(response.body));
+    client.log(JSON.stringify(response.body.content.token));
+    client.global.set("token", response.body.content.token);
+%}
+
+###
+

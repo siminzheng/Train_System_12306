@@ -1,0 +1,58 @@
+### 测试passenger插入新数据
+
+POST http://localhost:8001/member/passenger/save
+Content-Type: application/json
+token: {{token}}
+
+{
+  "memberId": 1,
+  "name": "grfgfdtest001",
+  "idCard": "1223344",
+  "type": "1"
+}
+
+
+
+### 测试passenger插入新数据
+
+POST http://localhost:8000/member/passenger/save
+Content-Type: application/json
+token: {{token}}
+
+{
+  "name": "grfgfdtest001",
+  "idCard": "1223344",
+  "type": "1"
+}
+
+### 测试passenger编辑数据
+
+POST http://localhost:8000/member/passenger/save
+Content-Type: application/json
+token: {{token}}
+
+{
+  "id": 1938232864147640320,
+  "memberId": 1937832565847232512,
+  "name": "xpp",
+  "idCard": "1223344",
+  "type": "1"
+}
+
+### 测试passenger删除数据
+
+DELETE http://localhost:8000/member/passenger/delete/1938209443913273344
+Content-Type: application/json
+token: {{token}}
+
+
+### 查询乘车人列表
+GET http://localhost:8000/member/passenger/query-list?page=1&size=2
+Content-Type: application/json
+token: {{token}}
+
+
+### 查询乘车人列表
+GET http://localhost:8000/member/passenger/query-list
+Content-Type: application/json
+token: {{token}}

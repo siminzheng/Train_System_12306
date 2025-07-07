@@ -1,0 +1,18 @@
+
+### 测试 business 模块
+GET http://localhost:8002/business/hello
+Accept: application/json
+
+
+### 测试gateway模块
+GET http://localhost:8000/business/hello
+Accept: application/json
+
+### 测试gateway模块
+GET http://localhost:8000/business/admin/train/query-all
+Accept: application/json
+
+
+
+###
+

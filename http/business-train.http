@@ -1,0 +1,7 @@
+
+### 生成火车座位
+GET http://localhost:8000/business/admin/train/gen-seat/G4
+Accept: application/json
+
+###
+
