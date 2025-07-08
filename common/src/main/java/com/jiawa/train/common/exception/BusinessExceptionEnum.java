@@ -1,10 +1,10 @@
 package com.jiawa.train.common.exception;
 
 public enum BusinessExceptionEnum {
-    MEMBER_MOBILE_EXIST("手机已注册"),
+
+    MEMBER_MOBILE_EXIST("手机号已注册"),
     MEMBER_MOBILE_NOT_EXIST("请先获取短信验证码"),
-    MEMBER_MOBILE_CODE_ERROR("验证码错误"),
-    MEMBER_PASSENGER_NUM_SIZE_LIMIT("乘车人数过多，请删除未使用的乘车人之后重试"),
+    MEMBER_MOBILE_CODE_ERROR("短信验证码错误"),
 
     BUSINESS_STATION_NAME_UNIQUE_ERROR("车站已存在"),
     BUSINESS_TRAIN_CODE_UNIQUE_ERROR("车次编号已存在"),
@@ -13,14 +13,13 @@ public enum BusinessExceptionEnum {
     BUSINESS_TRAIN_CARRIAGE_INDEX_UNIQUE_ERROR("同车次厢号已存在"),
 
     CONFIRM_ORDER_TICKET_COUNT_ERROR("余票不足"),
-    INVALID_SELL_RANGE("非法的区间参数: start=%s, end=%s, length=%s");
-
+    CONFIRM_ORDER_EXCEPTION("服务器忙，请稍候重试"),
+    CONFIRM_ORDER_LOCK_FAIL("当前抢票人数过多，请稍候重试"),
+    CONFIRM_ORDER_FLOW_EXCEPTION("当前抢票人数太多了，请稍候重试"),
+    CONFIRM_ORDER_SK_TOKEN_FAIL("当前抢票人数过多，请5秒后重试"),
     ;
 
     private String desc;
-
-    BusinessExceptionEnum() {
-    }
 
     BusinessExceptionEnum(String desc) {
         this.desc = desc;
@@ -38,6 +37,6 @@ public enum BusinessExceptionEnum {
     public String toString() {
         return "BusinessExceptionEnum{" +
                 "desc='" + desc + '\'' +
-                '}';
+                "} " + super.toString();
     }
 }
